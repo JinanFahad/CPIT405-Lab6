@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Lab 6</h1>
+  <h2>Like or dislike</h2>
+
+  <div class="row" role="group" aria-label="Vote">
+    <button id="likeBtn" class="btn-vote" aria-pressed="false">
+      <span aria-hidden="true">👍</span>
+      <span class="counts" id="likeCount">0</span>
+    </button>
+    <button id="dislikeBtn" class="btn-vote" aria-pressed="false">
+      <span aria-hidden="true">👎</span>
+      <span class="counts" id="dislikeCount">0</span>
+    </button>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <div class="section-title">Comments</div>
+  <p class="helper">One comment per user (enforced with cookies). Use Reset to start over.</p>
+
+  <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+
+  <div class="actions">
+    <button id="submitComment" class="btn">Submit</button>
+    <button id="clearInput" class="btn secondary">Clear</button>
+    <button id="resetAll" class="btn warning" title="Undo my vote, clear my comments and cookies">Reset</button>
+  </div>
+
+  <ul id="comments"></ul>
+
+  <footer>Counts and your comment persist with cookies (per browser).</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
