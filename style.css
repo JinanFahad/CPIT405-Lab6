@@ -49,7 +49,6 @@ textarea:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px #dbeafe; }
 }
 
 .btn.secondary { background: #6b7280; }
-.btn.warning { background: #b91c1c; }
 .btn:active { transform: translateY(1px); }
 
 #toast {
