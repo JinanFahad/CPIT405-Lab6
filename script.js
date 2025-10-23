@@ -32,7 +32,6 @@ const dislikeCountEl = document.getElementById("dislikeCount");
 const input = document.getElementById("commentInput");
 const submitComment = document.getElementById("submitComment");
 const clearInput = document.getElementById("clearInput");
-const resetAll = document.getElementById("resetAll");
 const commentsList = document.getElementById("comments");
 const toast = document.getElementById("toast");
 
@@ -138,23 +137,4 @@ clearInput.addEventListener("click", () => {
   input.focus();
 });
 
-resetAll.addEventListener("click", () => {
-  const vote = getCookie(CK.vote);
-  if (vote === "like") {
-    const v = Math.max(0, readIntCookie(CK.likes, DEFAULT_COUNTS.likes) - 1);
-    setCookie(CK.likes, v);
-  } else if (vote === "dislike") {
-    const v = Math.max(0, readIntCookie(CK.dislikes, DEFAULT_COUNTS.dislikes) - 1);
-    setCookie(CK.dislikes, v);
-  }
 
-  eraseCookie(CK.vote);
-  eraseCookie(CK.commented);
-  writeJsonCookie(CK.comments, []);
-
-  setPicked(null);
-  renderCounts();
-  renderComments();
-  input.value = "";
-  showToast("Your vote & comments were reset. You can vote again now.");
-});
